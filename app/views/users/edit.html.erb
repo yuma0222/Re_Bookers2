@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+
+    <h1>User info</h1>
+
+    <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+        <h5><%= @user.errors.count %> errors prohibited this book from being saves:</h5>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <h5>Name</h5>
+        <%= f.text_field :name %>
+
+      <h5>Image</h5>
+        <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+      <h5>Introduction</h5>
+        <%= f.text_area :introduction %>
+      <p><%= f.submit "Update User", class: "btn btn-default" %></p>
+    <% end %>
+
+  </div>
+</div>
