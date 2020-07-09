@@ -1,0 +1,7 @@
+<h2>Follow Users</h2>
+<% if @users.count > 0 %>
+  <%= render '/users/sidebar', user: @user,book: @book, now: ''%>
+  <%= render '/users/index', users: @users %>
+<% else %>
+  <p>ユーザーはいません</p>
+<% end %>
